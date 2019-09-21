@@ -3,7 +3,7 @@
 import pygame
 
 def main():
-    print("hang em")
+    print("hang em good")
 
 
 main()
