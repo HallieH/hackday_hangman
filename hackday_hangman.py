@@ -39,8 +39,9 @@ def hangman():
     pygame.init()
 
     screen = pygame.display.set_mode((WIDTH,HEIGHT))
-
+    textinput = pygame_textinput.TextInput()
     game_over = False
+    
 
     while not game_over:
         for event in pygame.event.get():
@@ -49,6 +50,8 @@ def hangman():
                 sys.exit()
             logic.logic()
             visuals.visual(screen)
+            textinput.update(events)
+
         
             
 
