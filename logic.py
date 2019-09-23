@@ -1,2 +1,3 @@
 def logic():
-    print("logic")
+    #print("logic")
+    print()

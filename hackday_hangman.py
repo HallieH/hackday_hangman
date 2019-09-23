@@ -5,6 +5,7 @@ import pygame
 import pygame_textinput
 import logic 
 import visuals
+import random
 
 WIDTH = 800
 HEIGHT = 600
@@ -39,7 +40,7 @@ def hangman():
     pygame.init()
 
     screen = pygame.display.set_mode((WIDTH,HEIGHT))
-
+    textinput = pyfame_textinput.TextInput()
     game_over = False
 
     while not game_over:
@@ -49,7 +50,49 @@ def hangman():
                 sys.exit()
             logic.logic()
             visuals.visual(screen)
-        
-            
 
-hangman()
+        
+y = random.randint(0,21)
+currentIdiom = idioms[y].lower()
+mistakeslist = []
+LinesForGuessing = []
+for w in currentIdiom:
+        if w == " ":
+            LinesForGuessing.append(" ") 
+        elif w == "'":
+            LinesForGuessing.append("'") 
+        else:
+            LinesForGuessing.append("-") 
+
+while len(mistakeslist) < 7:
+    
+    
+    printthis = ""
+    for element in LinesForGuessing:
+        printthis = printthis+element
+    print("Mistakes: ",len(mistakeslist))
+    x = (input(("Guess one letter: ")))
+    while len(x)!=1:
+        x = input(("ONE letter dummy. Try again: "))
+    count = 0
+    hit = False
+    for w in currentIdiom:
+        if x == currentIdiom[count]:
+            hit = True
+            LinesForGuessing[count] = currentIdiom[count]
+        count = count + 1
+    if hit == False:
+        mistakeslist.append(x) 
+    printthis = ""
+    for element in LinesForGuessing:
+        printthis = printthis+element
+    print(printthis)
+
+    if "-" not in LinesForGuessing:
+        print("YOU WIN")
+        sys.exit()
+
+print("YOU LOSE")
+print(currentIdiom)
+
+#hangman()
