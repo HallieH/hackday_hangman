@@ -40,8 +40,13 @@ def hangman():
     pygame.init()
 
     screen = pygame.display.set_mode((WIDTH,HEIGHT))
+<<<<<<< HEAD
     textinput = pyfame_textinput.TextInput()
+=======
+    textinput = pygame_textinput.TextInput()
+>>>>>>> 53524a2b95703756215a45cc4cc06e9c3579202b
     game_over = False
+    
 
     while not game_over:
         for event in pygame.event.get():
@@ -50,6 +55,7 @@ def hangman():
                 sys.exit()
             logic.logic()
             visuals.visual(screen)
+<<<<<<< HEAD
 
         
 y = random.randint(0,21)
@@ -94,5 +100,9 @@ while len(mistakeslist) < 7:
 
 print("YOU LOSE")
 print(currentIdiom)
+=======
+            #textinput.update(events)
+
+>>>>>>> 53524a2b95703756215a45cc4cc06e9c3579202b
 
 #hangman()
