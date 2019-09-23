@@ -5,7 +5,6 @@
     "version": "0.2.0",
     "configurations": [
         {
-<<<<<<< HEAD
             "name": "Python: Current File (Integrated Terminal)",
             "type": "python",
             "request": "launch",
@@ -65,8 +64,8 @@
             "type": "python",
             "request": "launch",
             "program": "${file}",
-            "console": "externalTerminal"
-=======
+            "console": "externalTerminal",
+
             "name": "Python: Django",
             "type": "python",
             "request": "launch",
@@ -76,7 +75,6 @@
                 "--noreload"
             ],
             "django": true
->>>>>>> 53524a2b95703756215a45cc4cc06e9c3579202b
         }
     ]
 }
